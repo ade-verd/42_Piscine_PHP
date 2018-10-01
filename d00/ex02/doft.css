@@ -1,0 +1,7 @@
+#banner {
+   border:10px solid #909090;
+   border-radius: 10px;
+   background-image: url('resources/cluster.jpg');
+   background-size: 100% auto
+}
+BODY {background-color: #4e4e4e}
