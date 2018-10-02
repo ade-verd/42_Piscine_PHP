@@ -2,8 +2,7 @@
 <?php
 	if ($argc == 2)
 	{
-		$epur = trim($argv[1]);
-		$epur = trim(preg_replace("/ +/", ' ', $epur));
+		$epur = trim(preg_replace("/ +/", ' ', $arv[1]));
 		echo $epur."\n";
 	}
 ?>
