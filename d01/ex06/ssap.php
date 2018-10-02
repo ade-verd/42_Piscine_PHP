@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-	include("../ex03/ft_split.php");
+	include ("../ex03/ft_split.php");
 
 	if ($argc > 1)
 	{
@@ -11,7 +11,10 @@
 			$string_array = ft_split($argv[$i]);
 			foreach ($string_array as $word)
 				array_push($tab_all, $word);
+			$i++;
 		}
-		print_r($tab_all);
+		sort($tab_all);
+		foreach ($tab_all as $word)
+			echo $word."\n";
 	}
 ?>
