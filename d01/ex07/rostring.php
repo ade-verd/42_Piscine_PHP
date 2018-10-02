@@ -4,8 +4,10 @@
 
 	if ($argc > 1)
 	{
-		$array = ft_split($argv[1]);
 		$i = 0;
+		$imax = 0;
+
+		$array = ft_split($argv[1]);
 		$imax = sizeof($array) - 1;
 		$first = $array[$i];
 		while ($i < $imax)
