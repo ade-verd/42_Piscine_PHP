@@ -16,6 +16,7 @@
 
 		foreach ($all as $link)
 			$html = str_replace($link, strtoupper($link), $html);
+	
 	}
 
 	if ($argc > 1)
