@@ -1,8 +1,14 @@
 #!/usr/bin/php
 <?php
-	if ($argc > 2)
+	if ($argc == 2)
 	{
-		$tosearch = $argv[1];
+		if ($argv[1] == "moyenne")
+			average();
+		elseif ($argv[1] == "moyenne_user")
+			average_user();
+		elseif ($argv[1] == "ecart_moulinette")
+			mouli_gap();
+
 		$i = 2;
 
 		$array = array();
