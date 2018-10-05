@@ -2,9 +2,8 @@
 	function is_valid()
 	{
 		$submit = (isset($_POST['submit']) && $_POST['submit'] == "OK");
-		$log = (isset($_POST['login']) && !empty($_POST['login']));
-		$pass = (isset($_POST['passwd']) && !empty($_POST['passwd']));
-
+		$log = (isset($_POST['login']) && $_POST['login'] != "");
+		$pass = (isset($_POST['passwd']) && $_POST['passwd'] != "");
 		if ($submit && $log && $pass)
 			return TRUE;
 		return FALSE;
@@ -44,7 +43,7 @@
 	if (is_valid())
 	{
 		$current['login'] = $_POST['login'];
-		$current['passwd'] = $_POST['passwd'];
+		$current['passwd'] = hash("whirlpool", $_POST['passwd']);
 	
 		if (file_exists($save_path) === FALSE)
 			mkdir($save_path, 0700, TRUE);
