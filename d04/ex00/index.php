@@ -1,18 +1,18 @@
 <?php
 	session_start();
 
-	if ($_GET['submit'] == "OK" && $_GET['name'] && $_GET['passwd'])
+	if ($_GET['submit'] == "OK" && $_GET['login'] && $_GET['passwd'])
 	{
-		$_SESSION['name'] = $_GET['name'];
+		$_SESSION['login'] = $_GET['login'];
 		$_SESSION['passwd'] = $_GET['passwd'];
 	}
-
-	echo "<html><body>\n";
-	echo "<form method='get' action='index.php'>\n";
-	echo "Identifiant: <input type='text' name='login' value='".$_SESSION['name']."'/>\n";
-	echo "<br />\n";
-	echo "Mot de passe: <input type='text' name='passwd' value='".$_SESSION['passwd']."'/>\n";
-	echo "<input type='submit' name='submit' value='OK'/>\n";
-	echo "</form>\n";
-	echo "</body></html>\n";
 ?>
+
+<html><body>
+<form method="get" action="index.php">
+	Identifiant: <input type="text" name="login" value="<?php echo $_SESSION['login'];?>">
+	<br />
+	Mot de passe: <input type="text" name="passwd" value="<?php echo $_SESSION['passwd'];?>">
+	<input type="submit" name="submit" value="OK">
+</form>
+</body></html>
