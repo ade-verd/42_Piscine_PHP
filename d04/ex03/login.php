@@ -4,10 +4,9 @@
 
 	function is_valid()
 	{
-		$submit = (isset($_POST['submit']) && $_POST['submit'] == "OK");
-		$log = (isset($_POST['login']) && $_POST['login'] != "");
-		$pass = (isset($_POST['passwd']) && $_POST['passwd'] != "");
-		if ($submit && $log && $pass)
+		$log = (isset($_GET['login']) && $_GET['login'] != "");
+		$pass = (isset($_GET['passwd']) && $_GET['passwd'] != "");
+		if ($log && $pass)
 			return TRUE;
 		return FALSE;
 	}
@@ -23,12 +22,3 @@
 		echo "ERROR\n";
 	}
 ?>
-
-<html><body>
-<form method="get" action="index.php">
-	Identifiant: <input type="text" name="login">
-	<br />
-	Mot de passe: <input type="text" name="passwd">
-	<input type="submit" name="submit" value="OK">
-</form>
-</body></html>
