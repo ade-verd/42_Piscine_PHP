@@ -4,6 +4,6 @@ WHERE LENGTH(`login`) > 5;
 
 /*
 ** How to check:
-** mysql -u root -p db_ade-verd < ex02.sql
+** mysql -u root -p db_ade-verd < ex04.sql
 ** mysql -u root -p db_ade-verd -e "SELECT * FROM ft_table;"
 */
