@@ -1,8 +1,5 @@
 SELECT title, summary FROM film
-WHERE
-	LOWER(title) like "%vincent%"
-	OR
-	LOWER(summary) like "%vincent%"
+WHERE LOWER(summary) like "%vincent%"
 ORDER BY id_film ASC;
 
 /*
