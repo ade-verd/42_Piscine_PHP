@@ -8,6 +8,6 @@ LIMIT 10;
 
 /*
 ** How to check:
-** mysql -u root -p db_ade-verd < ex02.sql
+** mysql -u root -p db_ade-verd < ex03.sql
 ** mysql -u root -p db_ade-verd -e "SELECT * FROM ft_table;"
 */
