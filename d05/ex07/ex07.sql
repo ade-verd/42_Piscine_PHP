@@ -1,6 +1,9 @@
 SELECT title, summary FROM film
-WHERE LOWER(summary) LIKE "%vincent%"
-ORDER BY id_film ASC;
+WHERE
+	title LIKE "%42%"
+	OR
+	summary LIKE "%42%"
+ORDER BY duration ASC;
 
 /*
 ** How to check:
