@@ -44,6 +44,22 @@ class Color {
 		return new Color($array);
 	}
 
+	public function sub($class) {
+		$array = array();
+		$array['red'] = $this->getRed() - $class->getRed();
+		$array['green'] = $this->getGreen() - $class->getGreen();
+		$array['blue'] = $this->getBlue() - $class->getBlue();
+		return new Color($array);
+	}
+
+	public function mult($mult) {
+		$array = array();
+		$array['red'] = $this->getRed() * $mult;
+		$array['green'] = $this->getGreen() * $mult;
+		$array['blue'] = $this->getBlue() * $mult;
+		return new Color($array);
+	}
+
 	public function getRed() { return $this->red; }
 	public function getGreen() { return $this->green; }
 	public function getBlue() { return $this->blue; }
