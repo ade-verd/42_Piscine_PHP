@@ -61,14 +61,80 @@ class Vector {
 			return clone $this;
 		else {
 			$orig = new Vertex(array('x' => 0, 'y' => 0, 'z' => 0));
-			$x_norm = $this->getX() / $this->magnitude();
-			$y_norm = $this->getY() / $this->magnitude();
-			$z_norm = $this->getZ() / $this->magnitude();
-			$dest = new Vertex(array('x' => $x_norm, 'y' => $y_norm, 'z' => $z_norm));
+			$x = $this->getX() / $this->magnitude();
+			$y = $this->getY() / $this->magnitude();
+			$z = $this->getZ() / $this->magnitude();
+			$dest = new Vertex(array('x' => $x, 'y' => $y, 'z' => $z));
 			$vector =  new Vector(array('orig' => $orig, 'dest' => $dest));
 			$this->_setNormalized(TRUE);
 			return $vector;
 		}
+	}
+
+	public function add(Vector $vect2)
+	{
+		$orig = new Vertex(array('x' => 0, 'y' => 0, 'z' => 0));
+		$x = $this->getX() + $vect2->getX();
+		$y = $this->getY() + $vect2->getY();
+		$z = $this->getZ() + $vect2->getZ();
+		$dest = new Vertex(array('x' => $x, 'y' => $y, 'z' => $z));
+		$vector =  new Vector(array('orig' => $orig, 'dest' => $dest));
+		return $vector;
+	}
+
+	public function sub(Vector $vect2)
+	{
+		$orig = new Vertex(array('x' => 0, 'y' => 0, 'z' => 0));
+		$x = $this->getX() - $vect2->getX();
+		$y = $this->getY() - $vect2->getY();
+		$z = $this->getZ() - $vect2->getZ();
+		$dest = new Vertex(array('x' => $x, 'y' => $y, 'z' => $z));
+		$vector =  new Vector(array('orig' => $orig, 'dest' => $dest));
+		return $vector;
+	}
+
+	public function opposite() {
+		$orig = new Vertex(array('x' => 0, 'y' => 0, 'z' => 0));
+		$dest = new Vertex(array('x' => $this->getX(), 'y' => $this->getY(), 'z' => $this->getZ()));
+		$vector =  new Vector(array('orig' => $dest, 'dest' => $orig));
+		return $vector;
+	}
+
+	public function scalarProduct($k)
+	{
+		$orig = new Vertex(array('x' => 0, 'y' => 0, 'z' => 0));
+		$x = $this->getX() * $k;
+		$y = $this->getY() * $k;
+		$z = $this->getZ() * $k;
+		$dest = new Vertex(array('x' => $x, 'y' => $y, 'z' => $z));
+		$vector =  new Vector(array('orig' => $orig, 'dest' => $dest));
+		return $vector;
+	}
+
+	public function dotProduct(Vector $vect2)
+	{
+		$x = $this->getX() * $vect2->getX();
+		$y = $this->getY() * $vect2->getY();
+		$z = $this->getZ() * $vect2->getZ();
+		return $x + $y + $z;
+	}
+
+	public function cos(Vector $vect2)
+	{
+		$numerator = $this->dotProduct($vect2);
+		$denominator = $this->magnitude() * $vect2->magnitude();
+		return $numerator / $denominator;
+	}
+
+	public function crossProduct(Vector $vect2)
+	{
+		$orig = new Vertex(array('x' => 0, 'y' => 0, 'z' => 0));
+		$x = ($this->getY() * $vect2->getZ()) - ($this->getZ() * $vect2->getY());
+		$y = ($this->getZ() * $vect2->getX()) - ($this->getX() * $vect2->getZ());
+		$z = ($this->getX() * $vect2->getY()) - ($this->getY() * $vect2->getX());
+		$dest = new Vertex(array('x' => $x, 'y' => $y, 'z' => $z));
+		$vector =  new Vector(array('orig' => $orig, 'dest' => $dest));
+		return $vector;
 	}
 
 	private function _diff_vertex() {
