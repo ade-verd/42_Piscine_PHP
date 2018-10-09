@@ -1,0 +1,10 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles Color class and needs it.
+
+An instance can be constructed with an x, y and z; Optionally you can provide
+a w and possibly a color. If you don't, w will be put at 1.0, and color at
+white rgb(255, 255, 255).
+
+The class provides no methods.
+---------------------------------------------------------------------- Vertex ->
