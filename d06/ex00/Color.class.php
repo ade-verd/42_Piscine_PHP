@@ -4,7 +4,7 @@ require_once 'Color.doc.php';
 
 class Color {
 
-	public $verbose = FALSE;
+	public static $verbose = FALSE;
 
 	public $red = 0;
 	public $green = 0;
@@ -16,7 +16,8 @@ class Color {
 			$this->_setRed($kwargs['rgb'] / (256 * 256));
 			$this->_setGreen(($kwargs['rgb'] / 256) % 256);
 			$this->_setBlue($kwargs['rgb'] % 256);
-			printf ("Color( red: %3d, green: %3d, blue: %3d ) constructed.\n", $this->getRed(), $this->getGreen(), $this->getBlue());
+			if (self::$verbose == TRUE)
+				printf ("Color( red: %3d, green: %3d, blue: %3d ) constructed" . PHP_EOL, $this->getRed(), $this->getGreen(), $this->getBlue());
 		} else {
 			if (array_key_exists('red', $kwargs))
 				$this->_setRed($kwargs['red']);
@@ -24,7 +25,8 @@ class Color {
 				$this->_setGreen($kwargs['green']);
 			if (array_key_exists('blue', $kwargs))
 				$this->_setBlue($kwargs['blue']);
-			printf ("Color( red: %3d, green: %3d, blue: %3d ) constructed.\n", $this->getRed(), $this->getGreen(), $this->getBlue());
+			if (self::$verbose == TRUE)
+				printf ("Color( red: %3d, green: %3d, blue: %3d ) constructed." . PHP_EOL, $this->getRed(), $this->getGreen(), $this->getBlue());
 		}
 	}
 
@@ -48,7 +50,7 @@ class Color {
 		return;
 	}
 	
-	private function doc() { print_doc(); }
+	public static function doc() { print_doc(); }
 
 }
 

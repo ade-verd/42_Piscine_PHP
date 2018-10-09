@@ -3,7 +3,7 @@
 function print_doc() {
 
 echo "<- Color ----------------------------------------------------------------------";
-echo "\n";
+echo PHP_EOL;
 echo "The Color class handles RGB colors.
 
 An instance can be contructed from either a RGB value:
@@ -27,9 +27,9 @@ Substracts each color constitutive and returns a new Color instance.
 Color   mult( \$f );
 Multiplies each color constitutive by factor \$f and returns a new Color
 instance.";
-echo "\n";
+echo PHP_EOL;
 echo "---------------------------------------------------------------------- Color ->";
-echo "\n";
+echo PHP_EOL;
 
 }
 
