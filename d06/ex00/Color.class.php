@@ -16,8 +16,6 @@ class Color {
 			$this->_setRed($kwargs['rgb'] / (256 * 256));
 			$this->_setGreen(($kwargs['rgb'] / 256) % 256);
 			$this->_setBlue($kwargs['rgb'] % 256);
-			if (self::$verbose == TRUE)
-				printf ("Color( red: %3d, green: %3d, blue: %3d ) constructed" . PHP_EOL, $this->getRed(), $this->getGreen(), $this->getBlue());
 		} else {
 			if (array_key_exists('red', $kwargs))
 				$this->_setRed($kwargs['red']);
@@ -25,9 +23,14 @@ class Color {
 				$this->_setGreen($kwargs['green']);
 			if (array_key_exists('blue', $kwargs))
 				$this->_setBlue($kwargs['blue']);
-			if (self::$verbose == TRUE)
-				printf ("Color( red: %3d, green: %3d, blue: %3d ) constructed." . PHP_EOL, $this->getRed(), $this->getGreen(), $this->getBlue());
 		}
+		if (self::$verbose == TRUE)
+			print(self::__toString() . " constructed." . PHP_EOL);
+	}
+
+	public function __toString() {
+		$s = sprintf ("Color( red: %3d, green: %3d, blue: %3d )", $this->getRed(), $this->getGreen(), $this->getBlue());
+		return $s;
 	}
 
 	public function getRed() { return $this->red; }
