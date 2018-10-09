@@ -41,12 +41,12 @@ $dest2 = new Vertex( array( 'x' => -12.34, 'y' => 23.45, 'z' => -34.56 ) );
 $vtc2  = new Vector( array( 'orig' => $orig2, 'dest' => $dest2 ) );
 
 print( 'Magnitude is ' . $vtc2->magnitude() . PHP_EOL );
-/*
+
 $nVtc2 = $vtc2->normalize();
 print( 'Normalized $vtc2 is ' . $nVtc2 . PHP_EOL );
 print( 'Normalized $vtc2 magnitude is ' . $nVtc2->magnitude() . PHP_EOL );
 
-print( '$vtc1 + $vtc2 is ' . $vtc1->add( $vtc2 ) . PHP_EOL );
+/*print( '$vtc1 + $vtc2 is ' . $vtc1->add( $vtc2 ) . PHP_EOL );
 print( '$vtc1 - $vtc2 is ' . $vtc1->sub( $vtc2 ) . PHP_EOL );
 print( 'opposite of $vtc1 is ' . $vtc1->opposite() . PHP_EOL );
 print( 'scalar product of $vtc1 and 42 is ' . $vtc1->scalarProduct( 42 ) . PHP_EOL );

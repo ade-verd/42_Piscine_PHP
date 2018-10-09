@@ -4,7 +4,7 @@ require_once 'Color.class.php';
 
 class Vector {
 
-	public static $verbose = False;
+	public static $verbose = FALSE;
 
 	private $_x = 0.0;
 	private $_y = 0.0;
@@ -12,6 +12,7 @@ class Vector {
 	private $_w = 0.0;
 	private $_dest;
 	private $_orig;
+	private $_normalized = FALSE;
 
 	public function __construct(array $kwargs) {
 		if (array_key_exists('orig', $kwargs))
@@ -36,15 +37,38 @@ class Vector {
 			$this->getX(), $this->getY(), $this->getZ(), $this->getW());
 		return $s;
 	}
+	
+	public function __clone() { return; }
 
 	public function getX() { return $this->_x; }
 	public function getY() { return $this->_y; }
 	public function getZ() { return $this->_z; }
 	public function getW() { return $this->_w; }
+	public function getNormalized() { return $this->_normalized; }
+
+	private function _setNormalized($bool) {
+		$this->_normalized = $bool;
+		return ;
+	}
 
 	public function magnitude() {
-		$norm = sqrt(pow($this->getX(), 2) + pow($this->getY(), 2) + pow($this->getZ(), 2) + pow($this->getW(), 2));
-		return $norm;
+		$length = sqrt(pow($this->getX(), 2) + pow($this->getY(), 2) + pow($this->getZ(), 2) + pow($this->getW(), 2));
+		return $length;
+	}
+
+	public function normalize() {
+		if ($this->getNormalized != FALSE)
+			return clone $this;
+		else {
+			$orig = new Vertex(array('x' => 0, 'y' => 0, 'z' => 0));
+			$x_norm = $this->getX() / $this->magnitude();
+			$y_norm = $this->getY() / $this->magnitude();
+			$z_norm = $this->getZ() / $this->magnitude();
+			$dest = new Vertex(array('x' => $x_norm, 'y' => $y_norm, 'z' => $z_norm));
+			$vector =  new Vector(array('orig' => $orig, 'dest' => $dest));
+			$this->_setNormalized(TRUE);
+			return $vector;
+		}
 	}
 
 	private function _diff_vertex() {
