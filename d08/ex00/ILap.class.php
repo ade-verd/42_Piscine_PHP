@@ -1,10 +1,13 @@
 <?php
-	interface ID6 {
-		public function getVal(); //private $_val = 0;
+	interface ILap {
+		//Array vessels activated
 
-		public function launch();
-		public function random(); //int rand (1, 6)
+		public function newlap($player);
+		function _reload_pp($player);
+		function _all_activated($player); //bool
+		function _run();
 
+		public function __toString(); 
 		public static function doc();
 	}
 ?>

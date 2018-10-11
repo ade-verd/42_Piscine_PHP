@@ -1,12 +1,13 @@
-<- ID6 -------------------------------------------------------------------------
-Interface D6
+<- ILap ------------------------------------------------------------------------
+Interface Lap
 
 Prévoit:
-- getVal : Donne la valeur de l'attribut privé $_val;
 
-- launch() : lance un dé;
-- random() : Retourne un nombre aléatoire entre 1 et 6;
-- __toString() : Retourne "Le D6 fait un 4."
+- newlap($player) : init un tour pour un joueur;
+- _reload_pp($player) : Redonne de nouveaux PP à un joueur
+- _all_activated($player) : checke si tous les vaisseaux ont été activés
+- _run() : finit le tour, execute les ordres, et créer un nouveau tour
 
+- __toString() : Retourne "Le joueur ... active la vaisseau"
 - doc() : La documentation;
 ----------------------------------------------------------------------------- ->
