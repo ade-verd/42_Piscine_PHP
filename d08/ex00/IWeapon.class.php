@@ -2,25 +2,16 @@
 	interface IVessel {
 
 		public function getName();
-		public function getSize();
-		public function getSprite();
-		public function getPP();
-		public function getHealth_max();
-		public function getHealth();
-		public function getShield();
-		public function getSpeed();
-		public function getMovability();
-		public function getWeapons();
+		public function getAmmo();
+		public function getScope();
+		public function getEffect_area();
 
-		function _setPP();
-		function _setSpeed();
-		function _setHealth();
-		function _setShield();
+		function _setAmmo($v);
 
-		function _ratio_speed_size();
-		function _calculate_damage();
-		function _apply_damage();
+		function _calculate_effect_area();
+		public function shoot();
 		
+		public function __toString(); 
 		public static function doc();
 	}
 ?>

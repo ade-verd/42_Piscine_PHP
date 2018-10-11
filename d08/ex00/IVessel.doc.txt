@@ -1,4 +1,4 @@
-<- IVessel -------------------------------------------------------------------------
+<- IVessel ---------------------------------------------------------------------
 Interface Vessel
 
 Prévoit:
@@ -23,6 +23,6 @@ _setShield() : Modifier Bouclier;
 - _calculate_damage() : calculer domages (selon arme et taille vaisseau);
 - _apply_damage() : appliquer domages;
 
-- __toString() : Retourne "Le D6 fait un 4."
+- __toString() : Retourne "..."
 - doc() : La documentation;
 ----------------------------------------------------------------------------- ->

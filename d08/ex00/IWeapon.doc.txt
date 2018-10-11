@@ -1,28 +1,19 @@
-<- IVessel -------------------------------------------------------------------------
+<- IWeapon ---------------------------------------------------------------------
 Interface Vessel
 
 Prévoit:
 
 - getName() : Nom;
-- getSize() : Taille;
-- getSprite() : Sprite;
-- getPP() : PP Engine;
-- getHealth_max() : Vie Max;
-- getHealth() : Vie actuelle; 
-- getShield() : Bouclier;
-- getSpeed() : Vitesse;
-- getMovability() : Manoeuvrabilité;
-- getWeapons() : Tableau des armes;
 
-_setPP() : Modifier PP;
-_setSpeed() : Modifier Vitesse;
-_setHealth() : Modifier Santé;
-_setShield() : Modifier Bouclier;
+- getAmmo() : Munitions;
+- getScope() : Portée ;
+- getEffect_area() : Zone d'effet;
 
-- _ratio_speed_size() : calculer ratio_speed_size (Plus c'est rapide, plus on peut aller loin);
-- _calculate_damage() : calculer domages (selon arme et taille vaisseau);
-- _apply_damage() : appliquer domages;
+- _setAmmo($v) : Modifier munitions avec PP;
 
-- __toString() : Retourne "Le D6 fait un 4."
+- _calculate_effect_area() : Calculer zone effet  (Renvoie un tableau de X lignes selon la portée avec les vecteurs d'effets);
+- shoot() : Tirer;
+
+- __toString() : Retourne les caractéristiques actuelles de l'arme
 - doc() : La documentation;
 ----------------------------------------------------------------------------- ->
