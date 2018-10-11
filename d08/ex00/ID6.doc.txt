@@ -1,0 +1,9 @@
+<- ID6 -------------------------------------------------------------------------
+Interface de D6
+
+Prévoit:
+- getVal : Donne la valeur de l'attribut privé $_val;
+- launch() : lance un dé;
+- random() : Retourne un nombre aléatoire entre 1 et 6;
+- doc() : La documentation;
+------------------------------------------------------------------------- ID6 ->
