@@ -1,0 +1,13 @@
+<- IArea -----------------------------------------------------------------------
+Interface Area
+
+Prévoit:
+- Constantes Hauteur et Largeur de la zone de jeu;
+- Constantes Obstacles (Murs et Points);
+
+- initialize() : initialise la map;
+- actualize() : raffraichit la map en fonction des données;
+
+- __toString() : Retourne la zone de jeu (.: zone vide, #: Joueur#, ♦: balle)
+- doc() : La documentation;
+----------------------------------------------------------------------------- ->
