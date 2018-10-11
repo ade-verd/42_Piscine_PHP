@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Calc</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<input id="num1" type="text" name="num1">
+		<select id="op">
+			<option value="+" selected>+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input id="num2" type="text" name="num2">
+		<input type="submit" value="Try me!" onclick="calc()">
+		<script type="text/javascript">
+			
+			function calc() {
+				var str1 = document.getElementById("num1").value;
+				var op = document.getElementById("op").value;
+				var str2 = document.getElementById("num2").value;
+
+				if (isvalid(str1, op, str2) == 1)
+					display_result(eval(str1+op+str2));	
+			}
+
+			function isvalid(str1, op, str2)
+			{
+				var n1 = Number(str1);
+				var n2 = Number(str2);
+
+				if (str1.length == 0 || str2.length == 0)
+					return alert("Error :(");
+				else if ( n1 == "NaN" || n2 == "NaN")
+					return alert("Error :(");
+				else if (n1 < 0 || n2 < 0)
+					return alert("Error :(");
+				else if ((n1 == 0 || n2 == 0) && (op == '/' || op == '%'))
+					return display_result("It's over 9000!");
+				return 1;
+			}
+
+			function display_result(result) {
+				console.log(result);
+				alert(result);
+			}
+
+		</script>
+	</body>
+</html>
