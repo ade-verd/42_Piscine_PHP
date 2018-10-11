@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Balloon</title>
+		<style>
+			#myballoon {
+				background-color:red;
+				border-radius:50%;
+				width:200px;
+				height:200px;}
+		</style>
+	</head>
+	<body>
+		<div id="myballoon" onclick="double_size()" onmouseout="reduce_size()"></div>
+		<script type="text/javascript">
+			function changecolor(div, sens)
+			{
+				var tab = ['rgb(255, 0, 0)', 'rgb(0, 128, 0)', 'rgb(0, 0, 255)'];
+				var color = window.getComputedStyle(div, null).getPropertyValue("background-color");
+				
+				var imax = tab.length - 1;
+				for (i in tab) {
+					if (tab[i] == color) {
+						if (sens >= 0 )
+							return (i == imax ? tab[0] : tab[++i]);
+						else
+							return (i == 0 ? tab[imax] : tab[--i]);
+					}
+				}
+			}
+
+			function double_size() {
+				var div = document.getElementById('myballoon');
+				var diameter = div.offsetWidth;
+				if (diameter > 420)
+					var newsize = 200;
+				else
+					var newsize = diameter + 10;
+				div.style.backgroundColor = changecolor(div, 1);
+				div.style.width = newsize;
+				div.style.height = newsize;
+			}
+
+			function reduce_size() {
+				var div = document.getElementById('myballoon');
+				var diameter = div.offsetWidth;
+				if (diameter >= 205)
+				{
+					var newsize = diameter - 5;
+					div.style.backgroundColor = changecolor(div, -1);
+					div.style.width = newsize;
+					div.style.height = newsize;
+				}
+			}
+		</script>
+	</body>
+</html>
