@@ -1,0 +1,28 @@
+<- IVessel -------------------------------------------------------------------------
+Interface Vessel
+
+Prévoit:
+
+- getName() : Nom;
+- getSize() : Taille;
+- getSprite() : Sprite;
+- getPP() : PP Engine;
+- getHealth_max() : Vie Max;
+- getHealth() : Vie actuelle; 
+- getShield() : Bouclier;
+- getSpeed() : Vitesse;
+- getMovability() : Manoeuvrabilité;
+- getWeapons() : Tableau des armes;
+
+_setPP() : Modifier PP;
+_setSpeed() : Modifier Vitesse;
+_setHealth() : Modifier Santé;
+_setShield() : Modifier Bouclier;
+
+- _ratio_speed_size() : calculer ratio_speed_size (Plus c'est rapide, plus on peut aller loin);
+- _calculate_damage() : calculer domages (selon arme et taille vaisseau);
+- _apply_damage() : appliquer domages;
+
+- __toString() : Retourne "Le D6 fait un 4."
+- doc() : La documentation;
+----------------------------------------------------------------------------- ->
