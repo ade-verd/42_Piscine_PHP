@@ -4,7 +4,7 @@
 	background-color: #909090;
 	border-radius: 10px;
 	box-shadow: 10px 10px 20px black;
-	width:1500px;
+	width:1400px;
 	height:120px;
 }
 
@@ -12,16 +12,28 @@
 	position: relative;
 }
 
-#side {
+#lside {
 	position: absolute;
 	border:10px solid #909090;
 	background-color: #909090;
 	border-radius: 10px;
 	box-shadow: 10px 10px 20px black;
-	width:120px;
-	height:500px;
-	left: 535px;
+	width:140px;
+	height: 450px;
+	left: 585px;
 }
+
+#rside {
+	position: absolute;
+	border:10px solid #909090;
+	background-color: #909090;
+	border-radius: 10px;
+	box-shadow: 10px 10px 20px black;
+	width: 140px;
+	height: 450px;
+	right: 585px;
+}
+
 #main {
 	border:10px solid #909090;
 	background-color: #909090;
@@ -33,12 +45,29 @@
 	vertical-align: center;
 }
 
+#pop {
+	position: absolute;
+	border: 5px solid #88f8a0;
+	background-color: #88f8a0;
+	border-radius: 10px;
+	box-shadow: 10px 10px 20px black;
+	width:450px;
+	height:150px;
+	margin-left: 500px;
+	top: 92%;
+}
+
 BODY {
 	background-color: #4e4e4e
 }
+
 IMG {
 	max-width: 100%;
 	max-height: 100%;
+	display:block;
+    margin:0;
+    padding:0;
+	border:none;
 }
 
 .icon {
@@ -49,12 +78,25 @@ IMG {
 .navicon {
 	display: table-cell;
 	vertical-align: middle;
-	width: 80px;
-	height: 80px;
+	width: 70px;
+	height: 70px;
+	margin: 5 5px;
+}
+
+.brick {
+	display: table-cell;
+	vertical-align: middle;
+	width: 70px;
+	height: 70px;
+	margin: 0 0px;
 }
 
 .center {
 	margin: auto;
+}
+
+#eye {
+	border: 5
 }
 
 #topright {

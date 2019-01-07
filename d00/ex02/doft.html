@@ -1,41 +1,57 @@
 <HTML>
 	<HEAD>
-		<TITLE>Day of the 42</TITLE>
+		<META http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<LINK rel="stylesheet" type="text/css" href="doft.css" media="all" />
+		<TITLE>Day of the 42</TITLE>
 	</HEAD>
 	<BODY>
 		<HEADER>
 			<DIV id="banner" class="center">
 				<IMG src="resources/day_of_the_42.png">
-				<DIV id="topright"><IMG src="resources/reload.png" class="icon"></DIV>
-				<DIV id="botright"><IMG src="resources/close.gif" class="icon"></DIV>
-				<DIV id="glass"><IMG src="resources/loupe.png"></DIV>
+				<DIV id="topright"><A href="http://www.disney.com"><IMG src="resources/reload.png" alt="Recommencer au début" class="icon"></A></DIV>
+				<DIV id="botright"><A href="https://www.relaischateaux.com"><IMG src="resources/close.gif" alt="Déconnecter" class="icon"></A></DIV>
+				<DIV id="glass"><IMG src="resources/loupe.png" alt="glass"></DIV>
 			</DIV>
 		</HEADER>
 		<BR />
 		<DIV id="container" class="center">
 			<NAV>
-				<DIV id="side">
-					<DIV align="center">
-						<A href=""><IMG src="resources/arrow.png" class="navicon"></A>
-						<A href=""><IMG src="resources/main.png" class="navicon"></A>
-						<A href=""><IMG src="resources/oeil.png" class="navicon"></A>
-						<A href=""><IMG src="resources/outil.png" class="navicon"></A>
-						<A href=""><IMG src="resources/chat-icon.png" class="navicon"></A>
-					</DIV>
+				<DIV id="lside" align="center">
+					<A href=""><IMG src="resources/arrow.png" alt="Avancer" class="navicon"></A>
+					<A href=""><IMG src="resources/main.png" alt="Prendre" class="navicon"></A>
+					<A href=""><IMG src="resources/oeil.png" alt="Regarder" class="navicon" style="border:5px solid red; border-radius:5px"></A>
+					<A href=""><IMG src="resources/outil.png" alt="Utiliser" class="navicon"></A>
+					<A href=""><IMG src="resources/chat-icon.png" alt="Parler" class="navicon"></A>
 				</DIV>
 			</NAV>
+			<ASIDE>
+				<DIV id="rside" align="center">
+					<A href=""><IMG src="resources/book.png" alt="book" class="navicon"></A>
+					<A href=""><IMG src="resources/towel.png" alt="towel" class="navicon"></A>
+					<A href=""><IMG src="resources/brick.jpg" alt="brick" class="brick" style="float: left;"><IMG /></A>
+					<A href=""><IMG src="resources/brick.jpg" alt="brick" class="brick" style="float: right;"><IMG /></A>
+				</DIV>
+			</ASIDE>
 			<SECTION>
 				<DIV id="main" class="center">
-					<IMG src="resources/cluster.jpg">
+					<IMG src="resources/cluster.jpg" alt="cluster" usemap="#map-cluster">
+					<MAP name="map-cluster">
+						<AREA shape="rect" coords="320, 320, 445, 540" href="https://www.ikea.com/" alt="IKEA" />
+						<AREA shape="rect" coords="785, 310, 975, 480" href="https://www.apple.com/" alt="APPLE" />
+					</MAP>
 				</DIV>
 			</SECTION>
-			<ASIDE>
-				<TABLE>
-					<TR><TD><A href=""><IMG src="resources/book.png"></A></TD></TR>
-					<TR><TD><A href=""><IMG src="resources/towel.png"></A></TD></TR>
-					<TR><TD><A href=""><IMG src="resources/brick.jpg"></A></TD></TR>
-			</ASIDE>
+			<SECTION>
+				<DIV id="pop">
+					<p style="line-height: 1;">Vous <b style="font-size: 250%;">entrez</b> alors dans une grande pièce remplie d'ordinateurs...<br />
+					- Bonjour vous êtes nouveau ici ?<br />
+						<form id="form1">
+							<input type="text" id="enter" name="question1" required minlength="1" maxlength="3" size="40" type="submit" value="" style="float: left;">
+						</form>
+						<button type="submit" form="form1" value="Submit" style="float: left;">Répondre</button>
+					</p>
+				</DIV>
+			</SECTION>
 		</DIV>
 	</BODY>
 </HTML>
