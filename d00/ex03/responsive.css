@@ -1,3 +1,25 @@
+@media (max-width:480px)
+{
+	.symbole {font-size:14px;}
+	.mol, .num {font-size: 10px;}
+	table, tr, td {	display: block; }
+	.chocolate {height: 6%;}
+}
+
+@media (min-width:480px) and (max-width:780px)
+{
+	.symbole {font-size:22px;}
+	.mol, .num {font-size: 11px;}
+	.chocolate {height: 8%;}
+}
+
+@media (min-width:780px)
+{
+	.symbole {font-size: 30px;}
+	.mol, .num {font-size: 12px;}
+	.chocolate {height: 10%;}
+}
+
 H1 {
 	text-align: center;
 	color: black;
@@ -27,24 +49,21 @@ TABLE .inconnus { background-color:#DDDDDD; }
 .symbole {
 	font-weight: bold;
 	text-align: center;
-	font-size: 30px;
 }
 
 .num {
 	text-align: left;
-	font-size: 12px;
 }
 
 .mol {
 	text-align: right;
-	font-size: 12px;
 }
 
 .chocolate {
 	vertical-align: bottom;
 	background-image: url('https://robeasto.files.wordpress.com/2011/01/periodic-chocolate.png');
-	height: 10%;
 	width: auto;
+	height: 10%;
 }
 
 .FOOTER {
