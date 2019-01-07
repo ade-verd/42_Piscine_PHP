@@ -86,8 +86,8 @@ IMG {
 .brick {
 	display: table-cell;
 	vertical-align: middle;
-	width: 70px;
-	height: 70px;
+	width: 35px;
+	height: 35px;
 	margin: 0 0px;
 }
 
