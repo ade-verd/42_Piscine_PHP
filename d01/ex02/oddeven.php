@@ -11,18 +11,16 @@
 	while ($stdin && !feof($stdin))
 	{
 		echo "Entrez un nombre: ";
-		if ($line = trim(fgets($stdin)))
+		$line = trim(fgets($stdin));
+		if (strlen($line) && is_numeric($line))
 		{
-			if (is_numeric($line))
-			{
-				if (is_pair($line))
-					echo "Le chiffre ".$line." est Pair\n";
-				else
-					echo "Le chiffre ".$line." est Impair\n";
-			}
+			if (is_pair($line))
+				echo "Le chiffre ".$line." est Pair\n";
 			else
-				echo "'".$line."' n'est pas un chiffre\n";
+				echo "Le chiffre ".$line." est Impair\n";
 		}
+		else if (!feof($stdin))
+			echo "'".$line."' n'est pas un chiffre\n";
 	}
 	fclose ($stdin);
 	echo "\n";
