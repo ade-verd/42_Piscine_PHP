@@ -9,6 +9,9 @@
 		$a = strptime($strdate, '%A %d %B %Y %H:%M:%S');
 		$timestamp = mktime($a['tm_hour'], $a['tm_min'], $a['tm_sec'],
 							$a['tm_mon'] + 1, $a['tm_mday'], $a['tm_year'] + 1900);
-		echo $timestamp."\n";
+		if ($timestamp < 0)
+			echo "Wrong Format\n";
+		else
+			echo $timestamp."\n";
 	}
 ?>
