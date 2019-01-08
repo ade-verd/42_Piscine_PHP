@@ -12,7 +12,7 @@
 			echo $result."\n";
 		}
 		else
-			echo "Incorrect Parameters\n";
+			echo "Syntax Error\n";
 	}
 	else
 		echo "Incorrect Parameters\n";
