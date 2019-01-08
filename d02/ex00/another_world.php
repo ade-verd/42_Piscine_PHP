@@ -2,8 +2,7 @@
 <?php
 	if ($argc > 1)
 	{
-		$str = $argv[1];
-		$str = preg_replace('/[\t ]+/', ' ', $str);
+		$str = trim(preg_replace('/[\t ]+/', ' ', $argv[1]));
 		echo $str."\n";
 	}
 ?>

@@ -26,10 +26,10 @@
 		while ($a[$i] && $b[$i])
 		{
 			if ($a[$i] != $b[$i])
-				return (char_group($a[$i]) - char_group($b[$i]));	
+				return (char_group($a[$i]) - char_group($b[$i]));
 			$i++;
 		}
-		return (char_group($a[$i]) - char_group($b[$i]));	
+		return (char_group($a[$i]) - char_group($b[$i]));
 	}
 
 	if ($argc > 1)

@@ -8,7 +8,7 @@
 //	sort($tab);
 	print_r($tab);
 	if (ft_is_sort($tab))
-		echo "Le tableau est trie\n";
+		echo "Le tableau est trié\n";
 	else
-		echo "Le tableau n’est pas trie\n";
+		echo "Le tableau n’est pas trié\n";
 ?>
