@@ -8,7 +8,7 @@
 		$months = array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
 
 		$wd = "(".implode("|", $weekdays).")";
-		$d = "([0-9]{2})";
+		$d = "((?:(?:[0-2]?[1-9]{1})|(?:[3][01]{1})))";
 		$m = "(".implode("|", $months).")";
 		$y = "([0-9]{4})";
 		$t = "(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)";
