@@ -4,7 +4,7 @@
 	{
 		$str = $argv[1];
 		$str = preg_replace('/\s+/', '', $str);
-		$numbers = '\d+';
+		$numbers = '[-+]?\d+';
 		$operators = '[+\/*%-]';
 		if (preg_match('/^'.$numbers.$operators.$numbers.'$/', $str) == 1)
 		{
