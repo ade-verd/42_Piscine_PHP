@@ -2,7 +2,7 @@
 	function set_cookie()
 	{
 		if ($_GET['name'] && $_GET['value'])
-			setcookie($_GET['name'], $_GET['value'], time() + 3600, "/", "localhost");
+			setcookie($_GET['name'], $_GET['value'], time() + 3600, "/");
 	}
 
 	function get_cookie()
@@ -14,7 +14,7 @@
 	function del_cookie()
 	{
 		if ($_GET['name'])
-			setcookie($_GET['name'], '', time() - 3600, "/", "localhost");
+			setcookie($_GET['name'], '', time() - 3600, "/");
 	}
 
 	if ($_GET['action'])
