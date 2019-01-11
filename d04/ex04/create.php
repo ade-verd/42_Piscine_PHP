@@ -23,7 +23,10 @@
 			header("Location: index.html");
 		}
 		else
+		{
 			echo "ERROR\n";
+			exit (1);
+		}
 	}
 
 	function login_exists($global, $current_login)

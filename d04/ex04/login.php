@@ -20,8 +20,8 @@
 	<body>
 		<div id="user">Logged as: <b><?php echo $_SESSION['logged_on_user']; ?></b><br /></div>
 		<div id=logout><a href="./logout.php">Log out</a><br /><br /></div>
-		<div><iframe id="chat" src="chat.php" width="100%" height="550px"></iframe></div>
-		<div><iframe id="speak" src="speak.php" width="100%" height="50px"></iframe></div>
+		<div><iframe name="chat" src="chat.php" width="100%" height="550px" scrolling="auto"></iframe></div>
+		<div><iframe name="speak" src="speak.php" width="100%" height="50px" scrolling="no"></iframe></div>
 	</body>
 </html>
 
@@ -31,5 +31,6 @@
 	{
 		$_SESSION['logged_on_user'] = "";
 		echo "ERROR\n";
+		exit (1);
 	}
 ?>

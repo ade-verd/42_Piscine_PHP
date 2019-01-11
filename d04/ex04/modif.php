@@ -26,7 +26,10 @@
 			header("Location: index.html");
 		}
 		else
+		{
 			echo "ERROR\n";
+			exit (1);
+		}
 	}
 
 	function logs_match(&$global, $current)
