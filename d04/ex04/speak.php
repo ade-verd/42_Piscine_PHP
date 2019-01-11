@@ -23,7 +23,8 @@
 		echo "ERROR\n";
 		exit (1);
 	}
-	if (isset($_POST['msg']) && isset($_SESSION['logged_on_user']))
+
+	if (isset($_POST['msg']) && $_POST['submit'] === "OK" && isset($_SESSION['logged_on_user']))
 	{
 		if (file_exists($path) || mkdir($path, 0700, TRUE))
 		{
@@ -50,7 +51,7 @@
 		<div id="messageForm">
 		<form action="?" method="post">
 			<input id="message" name="msg" type="text" value="" />
-			<input id="send" name="send" type="submit" value="Send" />
+			<input id="send" name="submit" type="submit" value="OK" />
 		</form>
 
 	</body>
