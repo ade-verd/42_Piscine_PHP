@@ -11,15 +11,20 @@
 		return FALSE;
 	}
 
-	if (is_valid() && auth($_POST['login'], $_POST['passwd']))
+	if (isset($_SESSION['logged_on_user']) || (is_valid() && auth($_POST['login'], $_POST['passwd'])))
 	{
-		$_SESSION['logged_on_user'] = $_POST['login'];
+		$_SESSION['logged_on_user'] ?: $_SESSION['logged_on_user'] = $_POST['login'];
 ?>
-<html><body>
-		<div id=user>Logged as: <b><?php echo $_SESSION['logged']; ?></b></div>
-		<iframe src="https://www.w3schools.com"></iframe>
-		<iframe src="https://www.w3schools.com"></iframe>
-</body></html>
+
+<html>
+	<body>
+		<div id="user">Logged as: <b><?php echo $_SESSION['logged_on_user']; ?></b><br /></div>
+		<div id=logout><a href="./logout.php">Log out</a><br /><br /></div>
+		<div><iframe id="chat" src="chat.php" width="100%" height="550px"></iframe></div>
+		<div><iframe id="speak" src="speak.php" width="100%" height="50px"></iframe></div>
+	</body>
+</html>
+
 <?php
 	}
 	else
