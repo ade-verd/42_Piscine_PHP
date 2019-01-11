@@ -14,7 +14,7 @@
 
 	if (!$valid)
 	{
-		header('WWW-Authenticate: Basic realm="My Realm"');
+		header('WWW-Authenticate: Basic realm="Espace membres"');
 		header('HTTP/1.0 401 Unauthorized');
 		echo "<html><body>Cette zone est accessible uniquement aux membres du site</body></html>\n";
 	}
