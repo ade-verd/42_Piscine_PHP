@@ -18,7 +18,10 @@
 	function write_pw($path, $array)
 	{
 		if (file_put_contents($path, serialize($array)))
+		{
 			echo "OK\n";
+			header("Location: index.html");
+		}
 		else
 			echo "ERROR\n";
 	}

@@ -13,12 +13,12 @@
 
 	if (is_valid() && auth($_GET['login'], $_GET['passwd']))
 	{
-		$_SESSION['loggued_on_user'] = $_GET['login'];
+		$_SESSION['logged_on_user'] = $_GET['login'];
 		echo "OK\n";
 	}
 	else
 	{
-		$_SESSION['loggued_on_user'] = "";
+		$_SESSION['logged_on_user'] = "";
 		echo "ERROR\n";
 	}
 ?>
