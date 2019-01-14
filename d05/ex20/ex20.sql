@@ -7,7 +7,7 @@ SELECT
 	FROM film
 LEFT JOIN genre ON genre.id_genre = film.id_genre
 LEFT JOIN distrib ON distrib.id_distrib = film.id_distrib
-WHERE film.id_genre REGEXP '^[4-8]$'
+WHERE film.id_genre REGEXP '^[4-8]$';
 
 /*
 ** How to check:
