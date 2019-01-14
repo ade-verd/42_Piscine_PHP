@@ -1,0 +1,74 @@
+html, head, body{
+  width:100%;
+  margin:0;
+  padding:0;
+  font-family:Verdana;
+  height: 100vh;
+}
+body{
+  background-image: linear-gradient(to bottom, #f0996a, #fca4a2, #f2b9cd, #e3d0e2, #e3e3e3);
+  letter-spacing: 0.063em;
+  background-repeat: repeat-y;
+}
+h1{
+  margin: 0;
+  color: white;
+  display: block;
+  margin-top: 1vh;
+  text-align: center;
+}
+
+a{
+  color:white;
+  text-decoration: none;
+}
+a:active{
+  text-decoration: underline;
+}
+#menu{
+margin: auto;
+text-align: center;
+margin-top: 3vh;
+margin-bottom: 3vh;
+}
+#menu ul li{
+  margin: 0;
+  padding: 0;
+  float: left;
+  list-style: none;
+  margin-left: 1vw;
+}
+#menu ul{
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+#menu a{
+  display: inline-block;
+  padding: 0.5vw 1vw;
+  font-size: 1vw;
+  border: 2px solid #5D591E;
+}
+
+h2{
+  color: white;
+  text-align: center;
+  background-color: #5D591E;
+  padding: 1vw;
+}
+#active{
+  text-decoration: underline;
+}
+
+#formulaire{
+  width: 40%;
+  margin: auto;
+  margin-top:3%;
+}
+.column {
+  width: 40%;
+   padding: 20px;
+   margin-left: auto;
+  margin-right: auto;
+}
