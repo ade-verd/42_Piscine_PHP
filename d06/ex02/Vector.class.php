@@ -37,7 +37,7 @@ class Vector {
 			$this->getX(), $this->getY(), $this->getZ(), $this->getW());
 		return $s;
 	}
-	
+
 	public function __clone() { return; }
 
 	public function getX() { return $this->_x; }
@@ -144,7 +144,7 @@ class Vector {
 		$this->_w = $this->_dest->getW() - $this->_orig->getW();
 		return;
 	}
-	
+
 	public static function doc() { return file_get_contents("Vector.doc.txt"); }
 
 }

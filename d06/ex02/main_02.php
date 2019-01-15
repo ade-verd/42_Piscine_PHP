@@ -11,10 +11,9 @@
 require_once 'Vertex.class.php';
 require_once 'Vector.class.php';
 
-
 Vertex::$verbose = False;
 
-print( Vector::doc() );
+//print( Vector::doc() );
 Vector::$verbose = True;
 
 
@@ -33,15 +32,17 @@ print( $vtcZunit . PHP_EOL );
 
 $dest1 = new Vertex( array( 'x' => -12.34, 'y' => 23.45, 'z' => -34.56 ) );
 Vertex::$verbose = True;
+echo "Vtc1:\n";
 $vtc1  = new Vector( array( 'dest' => $dest1 ) );
 Vertex::$verbose = False;
 
 $orig2 = new Vertex( array( 'x' => 23.87, 'y' => -37.95, 'z' => 78.34 ) );
 $dest2 = new Vertex( array( 'x' => -12.34, 'y' => 23.45, 'z' => -34.56 ) );
+echo "Vtc2:\n";
 $vtc2  = new Vector( array( 'orig' => $orig2, 'dest' => $dest2 ) );
 
 print( 'Magnitude is ' . $vtc2->magnitude() . PHP_EOL );
-
+/*
 $nVtc2 = $vtc2->normalize();
 print( 'Normalized $vtc2 is ' . $nVtc2 . PHP_EOL );
 print( 'Normalized $vtc2 magnitude is ' . $nVtc2->magnitude() . PHP_EOL );
@@ -55,5 +56,5 @@ print( 'cross product of $vtc1 and $vtc2 is ' . $vtc1->crossProduct( $vtc2 ) . P
 print( 'cross product of $vtcXunit and $vtcYunit is ' . $vtcXunit->crossProduct( $vtcYunit ) . 'aka $vtcZunit' . PHP_EOL );
 print( 'cosinus of angle between $vtc1 and $vtc2 is ' . $vtc1->cos( $vtc2 ) . PHP_EOL );
 print( 'cosinus of angle between $vtcXunit and $vtcYunit is ' . $vtcXunit->cos( $vtcYunit ) . PHP_EOL );
-
+*/
 ?>
