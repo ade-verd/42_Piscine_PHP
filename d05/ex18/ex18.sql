@@ -2,7 +2,7 @@ SELECT `name` FROM distrib
 WHERE
 	id_distrib REGEXP '^(42|6[2-9]|71|88|89|90)$'
 	OR
-	`name` REGEXP '(.*[yY].*){2}'
+	LOWER(`name`) REGEXP '^([^y]*)y[^y]*y([^y]*)$'
 LIMIT 2, 5;
 
 /*
