@@ -10,19 +10,17 @@ class Vector {
 	private $_y = 0.0;
 	private $_z = 0.0;
 	private $_w = 0.0;
-	private $_dest;
-	private $_orig;
 	private $_normalized = FALSE;
 
 	public function __construct(array $kwargs) {
 		if (array_key_exists('orig', $kwargs))
-			$this->_orig = $kwargs['orig'];
+			$orig = $kwargs['orig']
 		else
-			$this->_orig = new Vertex(array('x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 1.0));
+			$orig = new Vertex(array('x' => 0.0, 'y' => 0.0, 'z' => 0.0));
 		if (array_key_exists('dest', $kwargs)) {
-			$this->_dest = $kwargs['dest'];
-			$this->_diff_vertex();
+			$dest = $kwargs['dest'];
 		}
+		$this->_diff_vertex($dest, $orig);
 		if (self::$verbose == TRUE)
 			print(self::__toString() . " constructed" . PHP_EOL);
 	}
@@ -137,11 +135,11 @@ class Vector {
 		return $vector;
 	}
 
-	private function _diff_vertex() {
-		$this->_x = $this->_dest->getX() - $this->_orig->getX();
-		$this->_y = $this->_dest->getY() - $this->_orig->getY();
-		$this->_z = $this->_dest->getZ() - $this->_orig->getZ();
-		$this->_w = $this->_dest->getW() - $this->_orig->getW();
+	private function _diff_vertex(Vertex $dest, Vertex $orig) {
+		$this->_x = $dest->getX() - $orig->getX();
+		$this->_y = $dest->getY() - $orig->getY();
+		$this->_z = $dest->getZ() - $orig->getZ();
+		$this->_w = $dest->getW() - $orig->getW();
 		return;
 	}
 

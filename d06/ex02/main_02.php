@@ -34,7 +34,7 @@ $dest1 = new Vertex( array( 'x' => -12.34, 'y' => 23.45, 'z' => -34.56 ) );
 Vertex::$verbose = True;
 echo "Vtc1:\n";
 $vtc1  = new Vector( array( 'dest' => $dest1 ) );
-Vertex::$verbose = False;
+//Vertex::$verbose = False;
 
 $orig2 = new Vertex( array( 'x' => 23.87, 'y' => -37.95, 'z' => 78.34 ) );
 $dest2 = new Vertex( array( 'x' => -12.34, 'y' => 23.45, 'z' => -34.56 ) );
