@@ -14,7 +14,7 @@ class Vector {
 
 	public function __construct(array $kwargs) {
 		if (array_key_exists('orig', $kwargs))
-			$orig = $kwargs['orig']
+			$orig = $kwargs['orig'];
 		else
 			$orig = new Vertex(array('x' => 0.0, 'y' => 0.0, 'z' => 0.0));
 		if (array_key_exists('dest', $kwargs)) {
