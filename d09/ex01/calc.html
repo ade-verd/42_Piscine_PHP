@@ -33,11 +33,11 @@
 
 				if (str1.length == 0 || str2.length == 0)
 					return alert("Error :(");
-				else if ( n1 == "NaN" || n2 == "NaN")
+				else if ( isNaN(n1) || isNaN(n2))
 					return alert("Error :(");
 				else if (n1 < 0 || n2 < 0)
 					return alert("Error :(");
-				else if ((n1 == 0 || n2 == 0) && (op == '/' || op == '%'))
+				else if (n2 == 0 && (op == '/' || op == '%'))
 					return display_result("It's over 9000!");
 				return 1;
 			}
