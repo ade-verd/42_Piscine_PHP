@@ -11,7 +11,6 @@
 require_once 'Vertex.class.php';
 require_once 'Vector.class.php';
 
-
 Vertex::$verbose = False;
 
 print( Vector::doc() );

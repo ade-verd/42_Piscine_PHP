@@ -1,7 +1,6 @@
-SELECT 	COUNT(id_member) AS 'nb_susc',
+SELECT 	COUNT(*) AS 'nb_susc',
 		FLOOR(AVG(price)) AS 'av_susc',
-		MOD(SUM(duration_sub), 42) AS 'ft' FROM member
-INNER JOIN subscription ON member.id_sub = subscription.id_sub;
+		MOD(SUM(duration_sub), 42) AS 'ft' FROM subscription;
 
 /*
 ** How to check:

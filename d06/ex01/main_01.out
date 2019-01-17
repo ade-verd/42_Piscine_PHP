@@ -1,6 +1,12 @@
 
 <- Vertex ----------------------------------------------------------------------
-Your documentation here.
+The Vertex class handles Color class and needs it.
+
+An instance can be constructed with an x, y and z; Optionally you can provide
+a w and possibly a color. If you don't, w will be put at 1.0, and color at
+white rgb(255, 255, 255).
+
+The class provides no methods.
 ---------------------------------------------------------------------- Vertex ->
 Vertex( x: 0.00, y: 0.00, z:0.00, w:1.00, Color( red: 255, green: 255, blue: 255 ) ) constructed
 Vertex( x: 0.00, y: 0.00, z:0.00, w:1.00, Color( red: 255, green: 255, blue: 255 ) )
