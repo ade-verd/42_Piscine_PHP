@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>Calc</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+				integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+				crossorigin="anonymous">
+		</script>
+	</head>
+	<body>
+		<input id="num1" type="text" name="num1">
+		<select id="op">
+			<option value="+" selected>+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input id="num2" type="text" name="num2">
+		<input id="try" type="submit" value="Try me!">
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				function isvalid(str1, op, str2)
+				{
+					var n1 = Number(str1);
+					var n2 = Number(str2);
+
+					if (str1.length == 0 || str2.length == 0)
+						return alert("Error :(");
+					else if ( isNaN(n1) || isNaN(n2))
+						return alert("Error :(");
+					else if (n1 < 0 || n2 < 0)
+						return alert("Error :(");
+					else if (n2 == 0 && (op == '/' || op == '%'))
+						return display_result("It's over 9000!");
+					return 1;
+				}
+
+				function display_result(result) {
+					console.log(result);
+					alert(result);
+				}
+
+				$('#try').click(function()
+				{
+					var str1 = $('#num1').val();
+					var op = $('#op').val();
+					var str2 = $('#num2').val();
+
+					if (isvalid(str1, op, str2) == 1)
+						display_result(eval(str1 + op + str2));
+				});
+
+				window.setInterval(function () {
+					alert('Please, use me...');
+				}, 30000);
+
+			});
+
+		</script>
+	</body>
+</html>
