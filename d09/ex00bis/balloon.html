@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Balloon</title>
+		<style>
+			#b {
+				background-color:red;
+				border-radius:50%;
+				width:200px;
+				height:200px;}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+				integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+				crossorigin="anonymous">
+		</script>
+	</head>
+	<body>
+		<div id="b"></div>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				function changecolor(sens)
+				{
+					var tab = ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)'];
+					var color = $('#b').css("background-color");
+
+					var imax = tab.length - 1;
+					for (i in tab) {
+						if (tab[i] == color)
+						{
+							if (sens >= 0 )
+								return (i == imax ? tab[0] : tab[++i]);
+							else
+								return (i == 0 ? tab[imax] : tab[--i]);
+						}
+					}
+				}
+
+				$('#b').click(function()
+				{
+					if ($('#b').width() < 420)
+					{
+						$('#b').css("height", "+=10");
+						$('#b').css("width", "+=10");
+					}
+					else
+					{
+						$('#b').css("height", "200");
+						$('#b').css("width", "200");
+					}
+					$('#b').css("background-color", changecolor(1));
+				});
+
+
+				$('#b').mouseout(function()
+				{
+					if ($('#b').width() > 200)
+					{
+						$('#b').css("height", "-=5");
+						$('#b').css("width", "-=5");
+					}
+					$('#b').css("background-color", changecolor(-1));
+				});
+			});
+		</script>
+	</body>
+</html>
