@@ -5,7 +5,7 @@ Piscine PHP is a 2 weeks intensive course required to advance to 42 web speciali
 
 | Day | Theme | Subject | 
 | --- | ----- | ---- |
-| Day 00 | HTML / CSS | [d00.fr.pdf](d00/subject/d00.fr.pdf) |
+| [Day 00](d00) | HTML / CSS | [d00.fr.pdf](d00/subject/d00.fr.pdf) |
 | Day 01 | Procedural PHP | [d01.fr.pdf](d01/subject/d01.fr.pdf) |
 | Day 02 | Procedural PHP, REGEXP | [d02.fr.pdf](d02/subject/d02.fr.pdf) |
 | Day 03 | Procedural PHP, Local Server | [d03.fr.pdf](d03/subject/d03.fr.pdf) |
