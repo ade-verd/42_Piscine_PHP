@@ -15,4 +15,4 @@ Piscine PHP is a 2 weeks intensive course required to advance to 42 web speciali
 | Day 06 | Oriented Object PHP | [d06.fr.pdf](d06/subject/d06.fr.pdf) |
 | Day 07 | Oriented Object PHP | [d07.fr.pdf](d07/subject/d07.fr.pdf) |
 | Day 08 | Oriented Object PHP | [d08.fr.pdf](d08/subject/d08.fr.pdf) |
-| Day 09 | Javascript, jQuery | [d09.fr.pdf](d09/subject/D09-sujet-nondefinitif.pdf) |
+| Day 09 | Javascript, jQuery | [d09.fr.pdf](d09/subject/d09.fr.pdf) |
