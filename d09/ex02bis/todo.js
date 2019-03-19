@@ -1,5 +1,11 @@
 
-function new_todo(insert_into_id) {
+var cook = readCookie("todo");
+console.log("cookie readed (encoded): " + cook);
+console.log("cookie readed (decoded): " + decodeURIComponent(cook));
+$('#ft_list').html(decodeURIComponent(cook));
+
+$('#new').click(function()
+{
 	var todo = prompt("Please enter the new todo:", "My new To-do here");
 	if (todo != null && todo != "") {
 		var now = new Date();
@@ -8,29 +14,25 @@ function new_todo(insert_into_id) {
 		var added_at = "<i><small>[added at " + utcString + "]</small></i>";
 		list_item.innerHTML = todo + " " + added_at;
 		list_item.setAttribute("onclick", "rmChild(this);");
-		document.getElementById(insert_into_id).insertBefore(list_item, document.getElementById(insert_into_id).firstChild);
+		$('#ft_list').prepend(list_item);
 
-		var html =  encodeURIComponent(document.getElementById(insert_into_id).innerHTML);
+
+		var html = encodeURIComponent($('#ft_list').html());
 		createCookie("todo", html, 1);
 	}
-}
+});
 
 function rmChild(which)
 {
 	if (confirm('Do you really want to remove this todo task ?'))
-		which.parentElement.removeChild(which);
-	var html =  encodeURIComponent(document.getElementById("ft_list").innerHTML);
+		which.remove();
+	var html = encodeURIComponent($('#ft_list').html());
 	createCookie("todo", html, 1);
 }
 
-function checkCookies(div_id) {
-	var cook = readCookie("todo");
-	console.log("cookie readed (encoded): " + cook);
-	console.log("cookie readed (decoded): " + decodeURIComponent(cook));
-	document.getElementById(div_id).innerHTML = decodeURIComponent(cook);
-}
+function createCookie(name, value, days)
+{
 
-function createCookie(name, value, days) {
 	if (days)
 	{
 		var date = new Date();
@@ -43,7 +45,8 @@ function createCookie(name, value, days) {
 	console.log("cookie created (encoded): " + name + "=" + value + expires + "; path=/");
 }
 
-function readCookie(name) {
+function readCookie(name)
+{
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
 	for (var i = 0; i < ca.length; i++) {

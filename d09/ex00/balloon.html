@@ -16,7 +16,7 @@
 			{
 				var tab = ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)'];
 				var color = window.getComputedStyle(div, null).getPropertyValue("background-color");
-				
+
 				var imax = tab.length - 1;
 				for (i in tab) {
 					if (tab[i] == color) {
@@ -43,10 +43,10 @@
 			function reduce_size() {
 				var div = document.getElementById('myballoon');
 				var diameter = div.offsetWidth;
+				div.style.backgroundColor = changecolor(div, -1);
 				if (diameter >= 205)
 				{
 					var newsize = diameter - 5;
-					div.style.backgroundColor = changecolor(div, -1);
 					div.style.width = newsize;
 					div.style.height = newsize;
 				}
